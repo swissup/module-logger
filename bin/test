@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MAGENTO_ROOT="$(cd "${SCRIPT_DIR}/../../../../.." && pwd)"
+
+run_unit() {
+    (cd "$MAGENTO_ROOT" && bin/clinotty bash -c \
+        "cd vendor/swissup/module-logger && ../../bin/phpunit -c phpunit.xml.dist ${*}")
+}
+
+case "${1:-unit}" in
+    unit) run_unit "${@:2}" ;;
+    *)    echo "Usage: $(basename "$0") [unit]"; exit 1 ;;
+esac

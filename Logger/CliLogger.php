@@ -278,7 +278,7 @@ class CliLogger extends AbstractLogger
 
         // Handle group start
         if ($level === self::LEVEL_GROUP_START) {
-            $indent = str_repeat('  ', $this->groupNestingLevel - 1);
+            $indent = str_repeat('  ', max(0, $this->groupNestingLevel - 1));
             $groupTitle = ($this->prefix ? $this->prefix . ' ' : '') . $log['message'];
 
             if ($this->enableColors) {
