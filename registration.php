@@ -1,8 +1,10 @@
 <?php
-use Magento\Framework\Component\ComponentRegistrar;
+if (!class_exists(\Magento\Framework\Component\ComponentRegistrar::class)) {
+    return;
+}
 
-ComponentRegistrar::register(
-    ComponentRegistrar::MODULE,
+\Magento\Framework\Component\ComponentRegistrar::register(
+    \Magento\Framework\Component\ComponentRegistrar::MODULE,
     'Swissup_Logger',
     __DIR__
 );
