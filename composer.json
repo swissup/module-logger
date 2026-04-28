@@ -1,0 +1,16 @@
+{
+    "name": "swissup/module-logger",
+    "description": "Swissup Logger module",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "psr/log": "*"
+    },
+    "autoload": {
+        "files": ["registration.php"],
+        "psr-4": {
+            "Swissup\\Logger\\": ""
+        }
+    }
+}
