@@ -2,7 +2,7 @@
     "name": "swissup/module-logger",
     "description": "Swissup Logger module",
     "type": "library",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "license": "MIT",
     "require": {
         "psr/log": "*"
